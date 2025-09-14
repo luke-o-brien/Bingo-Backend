@@ -25,7 +25,7 @@ app.get("/", async (req, res) => {
       .sort({ createdAt: "desc" });
     res.status(200).json(results);
   } catch (err) {
-    res.status(500).json({ err: err.message });
+    res.status(500).json({ err: "there was an error" });
   }
 });
 
