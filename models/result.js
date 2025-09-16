@@ -1,9 +1,13 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const resultschema = new mongoose.Schema(
   {
     player: {
       type: String,
+      required: true,
+    },
+    duration: {
+      type: Number,
       required: true,
     },
   },

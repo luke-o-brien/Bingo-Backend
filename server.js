@@ -21,8 +21,7 @@ app.use(logger("dev"));
 app.get("/", async (req, res) => {
   try {
     const results = await Result.find({})
-
-      .sort({ createdAt: "desc" });
+    .sort({ duration: 1 });
     res.status(200).json(results);
   } catch (err) {
     res.status(500).json({ err: err.message });
