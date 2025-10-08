@@ -40,6 +40,14 @@ app.post("/", async (req, res) => {
 
 const PORT = process.env.PORT || 3000
 
+process.on("unhandledRejection", (reason, promise) => {
+  console.error("Unhandled Rejection:", reason);
+});
+
+process.on("uncaughtException", (err) => {
+  console.error("Uncaught Exception:", err);
+});
+
 app.listen(PORT, () => {
   console.log("server started");
 });
